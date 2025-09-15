@@ -16,11 +16,14 @@
         {#each data as blog, _ (_)}
             <BlogCard {blog} />
         {/each}
+    {:catch _}
+        <article>
+            <h5>Looks like something went wrong here {@html "<3"}</h5>
+        </article>
     {/await}
 </section>
 
 <style>
-
     h2 {
         display: flex;
         align-items: center;

@@ -6,12 +6,12 @@
 </script>
 
 <article>
-    <a href="/blogs/{blog.short_title}" aria-label="Link to article"></a>
     <h4>{blog.title}</h4>
     <p>
         {blog.subtitle}
     </p>
     <span>Written on {formatDate(new Date(blog.created))}</span>
+    <a href="/blogs/{blog.short_title}" aria-label="Link to article"></a>
 </article>
 
 <style>
@@ -37,8 +37,9 @@
         height: 100%;
     }
 
-    a:hover + h4 {
+    article:has(a):hover {
         text-decoration: underline;
+        text-decoration-thickness: 1px;
     }
 
     span {

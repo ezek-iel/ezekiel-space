@@ -27,7 +27,12 @@ export async function getBlogByShortTitle(short_title: string) {
     const records = await pb.collection("post").getFullList({
         filter: `short_title="${short_title}"`
     });
-    return records[0];
+
+    if (records.length == 0) {
+        throw new Error("Blog does not exist")
+    }
+
+    return records[0]
 }
 
 export function formatDate(date: Date): string {
@@ -35,7 +40,7 @@ export function formatDate(date: Date): string {
 }
 
 export function parseMarkdown(content: string) {
-    const parser =  markdownit();
+    const parser = markdownit();
     return parser.render(content);
 }
 
