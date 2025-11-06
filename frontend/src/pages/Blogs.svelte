@@ -12,7 +12,9 @@
 </section>
 
 <section aria-label="Blog List" class="blog-list">
-    {#await allBlogs then data}
+    {#await allBlogs }
+        <span aria-busy="true">Waiting for the blogs</span>
+    {:then data}
         {#each data as blog, _ (_)}
             <BlogCard {blog} />
         {/each}

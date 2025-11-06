@@ -38,8 +38,10 @@
     }
 
     article:has(a):hover {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
+        & > h4 {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+        }
     }
 
     span {

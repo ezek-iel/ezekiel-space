@@ -11,15 +11,24 @@ importers:
       '@fontsource-variable/hanken-grotesk':
         specifier: ^5.2.7
         version: 5.2.7
+      '@fontsource-variable/jetbrains-mono':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@iconify/svelte':
         specifier: ^5.0.1
         version: 5.0.1(svelte@5.38.2)
       '@picocss/pico':
         specifier: ^2.1.1
         version: 2.1.1
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       markdown-it:
         specifier: ^14.1.0
         version: 14.1.0
+      markdown-it-footnote:
+        specifier: ^4.0.0
+        version: 4.0.0
       moment:
         specifier: ^2.30.1
         version: 2.30.1
@@ -209,6 +218,9 @@ packages:
 
   '@fontsource-variable/hanken-grotesk@5.2.7':
     resolution: {integrity: sha512-yEh1cYdV7Xxb7nvszyNXvDSVJvdyTxPAeZTQ2CcdQZZ4cElCezoERfimgDCkheFzpbP1qyy7hW19smI5J/Brpg==}
+
+  '@fontsource-variable/jetbrains-mono@5.2.8':
+    resolution: {integrity: sha512-WBA9elru6Jdp5df2mES55wuOO0WIrn3kpXnI4+W2ek5u3ZgLS9XS4gmIlcQhiZOWEKl95meYdvK7xI+ETLCq/Q==}
 
   '@iconify/svelte@5.0.1':
     resolution: {integrity: sha512-nR1ApafyeRDcsx6ytd+0mzaY0ASYfG5YBW9dN8rUWxwi792/HX401qAZEkXSjT0iHm2Dgua+PwXDs/3ttJhkqQ==}
@@ -429,6 +441,10 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+
   is-reference@3.0.3:
     resolution: {integrity: sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==}
 
@@ -444,6 +460,9 @@ packages:
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
+
+  markdown-it-footnote@4.0.0:
+    resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
@@ -665,6 +684,8 @@ snapshots:
 
   '@fontsource-variable/hanken-grotesk@5.2.7': {}
 
+  '@fontsource-variable/jetbrains-mono@5.2.8': {}
+
   '@iconify/svelte@5.0.1(svelte@5.38.2)':
     dependencies:
       '@iconify/types': 2.0.0
@@ -847,6 +868,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
+  highlight.js@11.11.1: {}
+
   is-reference@3.0.3:
     dependencies:
       '@types/estree': 1.0.8
@@ -862,6 +885,8 @@ snapshots:
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  markdown-it-footnote@4.0.0: {}
 
   markdown-it@14.1.0:
     dependencies:

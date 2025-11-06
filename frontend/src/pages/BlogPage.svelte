@@ -1,26 +1,51 @@
 <script lang="ts">
     import { route } from "../utils/router";
+    import type { Post } from "../utils/funcs";
     import {
         getBlogByShortTitle,
         formatDate,
         parseMarkdown,
+        overrideFootnote,
     } from "../utils/funcs";
+    import { onMount } from "svelte";
+    import { get } from "svelte/store";
 
     let id = $state(route.params.id!);
-    let blog = $state(getBlogByShortTitle(id));
+    let isLoading = $state(true);
+    let blogContents: Post | null = $state(null);
+
+    onMount(function () {
+        getBlogByShortTitle(id).then(function (resp) {
+            blogContents = resp;
+            isLoading = false;
+        });
+    });
 </script>
 
-{#await blog then data}
+<svelte:head>
+    {#if blogContents}
+        <title>{blogContents.title} | Ezekiel Space</title>
+        <meta property="og:title" content={blogContents.title} />
+        <meta property="og:description" content={blogContents.subtitle} />
+        <meta property="og:image" content={blogContents.preview_image} />
+    {/if}
+</svelte:head>
+
+{#if isLoading}
+    <span aria-busy="true">Loading blog content</span>
+{:else if blogContents}
     <section aria-label="blog heading">
-        <h1>{data.title}</h1>
-        <p>Written {formatDate(new Date(data.created))}</p>
+        <h1>{blogContents.title}</h1>
+        <p>Written {formatDate(new Date(blogContents.created))}</p>
         <hr />
     </section>
 
     <section aria-label="Blog Content">
-        {@html parseMarkdown(data.content)}
+        <div class="markdown-block" {@attach overrideFootnote}>
+            {@html parseMarkdown(blogContents.content)}
+        </div>
     </section>
-{:catch error}
+{:else}
     <section class="not-found" aria-label="Blog Not Found">
         <article>
             <h2>The blog you're looking for does not exist.</h2>
@@ -29,7 +54,7 @@
             </h4>
         </article>
     </section>
-{/await}
+{/if}
 
 <style>
     p {

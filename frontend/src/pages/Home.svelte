@@ -2,16 +2,33 @@
     import Icon from "@iconify/svelte";
     import { getAllPinnedBlogs } from "../utils/funcs";
     import BlogCard from "../lib/BlogCard.svelte";
+    import previewImage from "../assets/img_preview.png";
 
     let allPinnedBlogs = $state(getAllPinnedBlogs());
 </script>
 
+<svelte:head>
+    <title>Home | Ezekiel Space</title>
+    <meta
+        name="description"
+        content="Loves music, code and everything in between."
+    />
+    <meta property="og:title" content="Home | Ezekiel Space" />
+    <meta
+        property="og:description"
+        content="Ezekiel Space is a personal website and blog of Ezekiel Akinfenwa, a web developer based in Lagos, Nigeria."
+    />
+    <meta property="og:image" content={previewImage} />
+</svelte:head>
+
 <section class="intro" aria-label="Introduction">
-    <h1>I'm Ezekiel</h1>
-    <p>
-        Hi, I'm a Developer based in Nigeria, I love building projects and
-        teaching people how to build projects. On the side, I enjoy listening to
-        Japanese music <span class="inline-icon">
+    <h1>Hi I'm Ezekiel</h1>
+    <p class="main-text">
+        I am a web developer based in Lagos, Nigeria. I love teaching others how
+        to build software that harnesses the awesome power of the web. I also
+        enjoy understanding how things work under the hood. When I am not on the
+        keyboard, I love listening to Japanese music
+        <span class="inline-icon">
             <Icon icon="tabler:music-code" />
         </span>
         , playing Need for Speed
@@ -34,7 +51,9 @@
     <h2 id="blog-heading">Blogs <Icon icon="tabler:star" /></h2>
 
     <div class="blogs">
-        {#await allPinnedBlogs then data}
+        {#await allPinnedBlogs}
+            <span aria-busy="true">Waiting for the blogs</span>
+        {:then data}
             {#each data as blog, _ (_)}
                 <BlogCard {blog} />
             {/each}
@@ -47,12 +66,16 @@
 </section>
 
 <style>
+    .main-text {
+        line-height: 2;
+    }
+
     .intro {
         padding-block-end: 4rem;
     }
 
     .intro h1 {
-        margin-bottom: 1.5rem;
+        margin-block-end: 1.5rem;
     }
 
     button {
@@ -66,7 +89,7 @@
     }
 
     .cta {
-        margin-top: 2rem;
+        margin-block-start: 2rem;
         display: flex;
         align-items: center;
         gap: 0.75rem;
