@@ -32,7 +32,7 @@ interface TypedPocketbase extends Pocketbase {
     collection(idOrName: "images"): RecordService<Image>
 }
 
-const pb = new Pocketbase("http://127.0.0.1:8090") as TypedPocketbase;
+const pb = new Pocketbase("/") as TypedPocketbase;
 
 export async function getAllBlogs() {
     return await pb.collection("post").getFullList();
