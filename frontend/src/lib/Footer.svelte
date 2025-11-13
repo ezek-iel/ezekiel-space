@@ -6,7 +6,7 @@
     <section>
         <p>Made with <Icon icon="mdi:heart" /> using Svelte and Pocketbase</p>
         <p>
-                Let's connect on <a
+            Let's connect on <a
                 href="https://www.linkedin.com/in/akinfenwa-ezekiel"
                 target="_blank"
                 >Linkedin <span class="social-icon">
@@ -19,14 +19,19 @@
                 ></a
             >
             and
-            <a href="https://github.com/ezek-iel">Github <Icon icon="tabler:brand-github" /></a>
+            <a href="https://github.com/ezek-iel"
+                >Github <Icon icon="tabler:brand-github" /></a
+            >
         </p>
+        <i class="small-text"
+            ><Icon icon="tabler:mail" />Send me a mail at hi@ezekielspace.cc</i
+        >
     </section>
 </footer>
 
 <style>
     footer {
-        border-block-start: .25rem dashed var(--pico-primary-background);
+        border-block-start: 0.25rem dashed var(--pico-primary-background);
         padding: 4rem 1.5rem;
         margin-block-start: 6rem;
     }

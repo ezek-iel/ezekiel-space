@@ -5,7 +5,6 @@
         getBlogByShortTitle,
         formatDate,
         parseMarkdown,
-        overrideFootnote,
     } from "../utils/funcs";
     import { onMount } from "svelte";
     import { get } from "svelte/store";
@@ -41,7 +40,7 @@
     </section>
 
     <section aria-label="Blog Content">
-        <div class="markdown-block" {@attach overrideFootnote}>
+        <div class="markdown-block">
             {@html parseMarkdown(blogContents.content)}
         </div>
     </section>

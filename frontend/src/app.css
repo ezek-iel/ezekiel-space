@@ -8,12 +8,16 @@ body {
 
 
 :root {
-  --pico-font-family-sans-serif: 'Hanken Grotesk Variable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-
+  --pico-font-family-sans-serif: 'Hanken Grotesk Variable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
 }
 
 main {
   padding: 1.75rem;
+}
+
+.iframe-container>iframe {
+  width: 100%;
+  height: 400px;
 }
 
 @media (min-width: 640px) {
@@ -46,6 +50,40 @@ section {
   code {
     font-family: "Jetbrains Mono Variable";
   }
+}
+
+.callout {
+  padding: 1rem;
+  margin-block: 2rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.callout.warning {
+  background-color: #FFFBEA;
+  border-color: #ffeeba;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #554315;
+    border-color: #79642e;
+  }
+}
+
+.callout.danger {
+  background-color: #F9EAEB;
+  border-color: #F5C6CB;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #5E2729;
+    border-color: #7B4A4C
+  }
+}
+
+
+.callout>.title {
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 
