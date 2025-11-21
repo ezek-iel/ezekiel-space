@@ -35,7 +35,7 @@ interface TypedPocketbase extends Pocketbase {
     collection(idOrName: "images"): RecordService<Image>
 }
 
-const pb = new Pocketbase(import.meta.env.VITE_POCKETBASE_URL || "/") as TypedPocketbase;
+const pb = new Pocketbase("/") as TypedPocketbase;
 
 export async function getAllBlogs() {
     return await pb.collection("post").getFullList();
