@@ -24,7 +24,7 @@
             >
         </p>
         <i class="small-text"
-            ><Icon icon="tabler:mail" />Send me a mail at hi@ezekielspace.cc</i
+            >Send me a mail at hi@ezekielspace.cc</i
         >
     </section>
 </footer>

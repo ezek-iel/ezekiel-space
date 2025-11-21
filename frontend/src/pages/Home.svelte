@@ -2,23 +2,12 @@
     import Icon from "@iconify/svelte";
     import { getAllPinnedBlogs } from "../utils/funcs";
     import BlogCard from "../lib/BlogCard.svelte";
-    import previewImage from "../assets/img_preview.png";
-
+   
     let allPinnedBlogs = $state(getAllPinnedBlogs());
 </script>
 
 <svelte:head>
     <title>Home | Ezekiel Space</title>
-    <meta
-        name="description"
-        content="Loves music, code and everything in between."
-    />
-    <meta property="og:title" content="Home | Ezekiel Space" />
-    <meta
-        property="og:description"
-        content="Ezekiel Space is a personal website and blog of Ezekiel Akinfenwa, a web developer based in Lagos, Nigeria."
-    />
-    <meta property="og:image" content={previewImage} />
 </svelte:head>
 
 <section class="intro" aria-label="Introduction">
@@ -39,11 +28,7 @@
         </span>
     </p>
     <div class="cta">
-        <button
-            >Watch Videos
-            <Icon icon="tabler:brand-youtube" />
-        </button>
-        <a href="blogs"><button class="outline">Read Blogs</button></a>
+        <a href="blogs"><button>Read Blogs</button></a>
     </div>
 </section>
 
